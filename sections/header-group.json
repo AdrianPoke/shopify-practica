@@ -26,10 +26,38 @@
             "case": "none"
           },
           "blocks": {}
+        },
+        "announcement_yJCVhe": {
+          "type": "_announcement",
+          "settings": {
+            "text": "Envío estándar gratuito a partir de 69,90€ +info",
+            "link": "",
+            "font": "var(--font-subheading--family)",
+            "font_size": "0.75rem",
+            "weight": "",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
+        },
+        "announcement_RYbGFa": {
+          "type": "_announcement",
+          "settings": {
+            "text": "Devoluciones gratuitas  +info",
+            "link": "",
+            "font": "var(--font-subheading--family)",
+            "font_size": "0.75rem",
+            "weight": "",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "announcement_BxgCk9"
+        "announcement_BxgCk9",
+        "announcement_yJCVhe",
+        "announcement_RYbGFa"
       ],
       "name": "t:names.announcement_bar",
       "settings": {
@@ -49,7 +77,7 @@
           "static": true,
           "settings": {
             "hide_logo_on_home_page": false,
-            "custom_height": 30,
+            "custom_height": 26,
             "custom_height_mobile": 28,
             "padding-block-start": 0,
             "padding-block-end": 0,
