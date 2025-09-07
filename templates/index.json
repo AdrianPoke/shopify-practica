@@ -285,8 +285,9 @@
             "product_list_text_YFtzcL": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
+              "disabled": true,
               "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "text": "",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -352,7 +353,7 @@
               "settings": {
                 "image_ratio": "adapt",
                 "border": "none",
-                "border_width": 1,
+                "border_width": 0,
                 "border_opacity": 100,
                 "border_radius": 0,
                 "padding-block-start": 0,
@@ -377,10 +378,10 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
-                "background": false,
+                "background": true,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 4,
+                "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -427,16 +428,16 @@
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
+        "columns_gap": 5,
+        "rows_gap": 4,
         "icons_style": "arrow",
         "icons_shape": "none",
-        "section_width": "page-width",
+        "section_width": "full-width",
         "horizontal_alignment": "flex-start",
-        "gap": 28,
+        "gap": 0,
         "color_scheme": "scheme-1",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     }
   },
