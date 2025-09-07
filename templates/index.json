@@ -16,7 +16,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>Esto es una prueba</p>",
+            "text": "<p>Esto es otra prueba</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
