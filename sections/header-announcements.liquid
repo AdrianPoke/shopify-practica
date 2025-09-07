@@ -78,6 +78,7 @@
   .announcement-bar__slider slideshow-arrows {
     padding: 0;
     mix-blend-mode: normal;
+    display: none;
   }
 
   .announcement-bar__slider slideshow-arrows .slideshow-control {
@@ -119,6 +120,15 @@
   .announcement-bar__link {
     position: absolute;
     inset: 0;
+  }
+
+  /*Bloque para cambiar el color de fondo de un anuncio*/
+  .announcement-bar,
+  .section-background,
+  .announcement-bar__slides,
+  .announcement-bar__slide {
+    background-color: #dc1f1f; 
+    color: #ffffff;
   }
 {% endstylesheet %}
 
