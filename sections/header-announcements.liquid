@@ -37,6 +37,33 @@
     </div>
   </announcement-bar-component>
 </aside>
+{% if section.blocks.size > 1 %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const announcementBar = document.querySelector('.announcement-bar');
+      const slides = document.querySelectorAll('.announcement-bar__slide');
+
+      function updateBarColor() {
+        slides.forEach((slide, i) => {
+          if (slide.getAttribute('aria-hidden') === 'false') {
+            // Primer slide rojo, el resto negro
+            const color = i === 0 ? "#dc1f1f" : "#000000";
+            announcementBar.style.backgroundColor = color;
+            announcementBar.style.color = "#ffffff"; // texto siempre blanco
+          }
+        });
+      }
+
+      // Inicial
+      updateBarColor();
+
+      // Observa cambios de slide
+      const observer = new MutationObserver(updateBarColor);
+      slides.forEach(slide => observer.observe(slide, { attributes: true, attributeFilter: ['aria-hidden'] }));
+    });
+  </script>
+{% endif %}
+
 
 {% stylesheet %}
   .announcement-bar {
@@ -143,7 +170,7 @@
       "label": "t:settings.scroll_speed",
       "min": 2,
       "max": 10,
-      "default": 5,
+      "default": 3,
       "unit": "sec"
     },
     {
