@@ -59,6 +59,9 @@
         "announcement_yJCVhe",
         "announcement_RYbGFa"
       ],
+      "custom_css": [
+        ".announcement-bar {background-color: #dc1f1f; color: #ffffff;}"
+      ],
       "name": "t:names.announcement_bar",
       "settings": {
         "speed": 5,
