@@ -1,0 +1,17 @@
+{% comment %}
+  Snippet to display available sizes (variants) for a product.
+  Only shows variants that are available.
+{% endcomment %}
+
+{% if product.variants.size > 1 %}
+  <div class="product-sizes">
+    <h4>Tallas disponibles:</h4>
+    <ul>
+      {% for variant in product.variants %}
+        {% if variant.available %}
+          <li>{{ variant.title }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
