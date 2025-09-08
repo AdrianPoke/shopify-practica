@@ -91,3 +91,10 @@
     {% render 'overflow-list', class: class, ref: 'overflowMenu', children: children, minimum-items: 2, defer: true %}
   </div>
 </nav>
+
+{% stylesheet %}
+
+  .menu-list__list-item:first-child .menu-list__link-title {
+    color: #dc1f1f; 
+  }
+{% endstylesheet %}
