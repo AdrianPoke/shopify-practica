@@ -1,10 +1,7 @@
-
-
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <div
   class="
     section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}
-    {% if section.settings.section_height != "" %} {{ section.settings.section_height | prepend: "section--height-" }}{% endif %}
   "
 >
   {% render 'background-media',
@@ -17,20 +14,145 @@
 
   <div
     class="
-      spacing-style
-      layout-panel-flex
-      layout-panel-flex--{{ section.settings.content_direction }}
       section-content-wrapper
-      {% if section.settings.vertical_on_mobile %} mobile-column{% endif %}
+      layout-panel-flex
+      layout-panel-flex--row
+      spacing-style
+      flex-wrap
+      justify-between
+      items-start
     "
-    style="
-      {% render 'layout-panel-style', settings: section.settings %}
-      {%  render 'spacing-style', settings: section.settings %}
-    "
+    style="{% render 'spacing-style', settings: section.settings %}"
   >
-    {% content_for 'blocks' %}
+    <!-- COLUMNA 1: Información general -->
+    <div class="footer-column">
+      <h5>Pais / Región</h5>
+      <p>España (Península y Baleares) | ES</p>
+    </div>
+
+    <!-- COLUMNA 2: Información -->
+    <div class="footer-column">
+      <h5>Información</h5>
+      <div class="footer-subcolumns">
+        <!-- Primera subcolumna -->
+        <ul class="subcol">
+          <li>Contáctanos</li>
+          <li>Preguntas frecuentes</li>
+          <li>Territorios y tarifas de envío</li>
+          <li>Devoluciones</li>
+          <li>Condiciones de compra</li>
+          <li>Aviso legal</li>
+          <li>Política de privacidad</li>
+          <li>Política de cookies</li>
+        </ul>
+
+        <!-- Segunda subcolumna -->
+        <ul class="subcol">
+          <li>Configurar cookies</li>
+          <li>Resolución de conflictos (EU)</li>
+          <li>B2B</li>
+          <li>Sitemap</li>
+          <li>Canal de Denuncias</li>
+          <li>Personalizador</li>
+          <li>Conócenos</li>
+          <li>Zapatillas Unisex</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- COLUMNA 5: Contacto -->
+    <div class="footer-column">
+      <h5>¿Necesitas ayuda?</h5>
+      <p>900 400 440 (L-V 8:00h - 14:00h)</p>
+      <p>shoponline@unisa-europa.com</p>
+    </div>
+
+    <!-- COLUMNA 6: Social -->
+    <div class="footer-column">
+      <h5>Social</h5>
+      <ul class="social-icons">
+        <li>Facebook</li>
+        <li>Pinterest</li>
+        <li>Instagram</li>
+        <li>TikTok</li>
+        <li>Spotify</li>
+      </ul>
+    </div>
+
+    <!-- COLUMNA 7: Opiniones -->
+    <div class="footer-column">
+      <h5>Ekomi</h5>
+      <p>9.20 / 10.00</p>
+      <p>todo perfecto</p>
+      <a href="#">Ver valoración</a>
+    </div>
   </div>
 </div>
+
+{% stylesheet %}
+.section-content-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.footer-column {
+  flex: 0 0 auto;
+  min-width: 100px; 
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem; 
+  line-height: 2.0rem;
+}
+
+.footer-column h5 {
+  margin-bottom: 1.1rem;
+  font-weight: bold;
+  font-size: 1.0rem; 
+}
+
+.footer-subcolumns {
+  display: flex;
+  gap: 2rem; /* espacio entre subcolumnas */
+}
+
+.footer-subcolumns .subcol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1 1 auto; /* que ocupen el espacio disponible */
+}
+
+.footer-subcolumns .subcol li {
+  margin-bottom: 0.25rem;
+}
+
+.footer-column p, .footer-column ul li, .footer-column a {
+  margin-bottom: 0.25rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column; 
+  gap: 0.2rem; 
+}
+
+.social-icons li {
+  display: block;
+  margin: 0;
+}
+
+{% endstylesheet %}
+
+
 
 {% schema %}
 {
