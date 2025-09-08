@@ -287,7 +287,9 @@
         "group_tbFfTQ",
         "footer_utilities_KRaGcH"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "footer,.section-wrapper.footer {border-top: none !important;}"
+      ],
       "name": "Footer",
       "settings": {
         "content_direction": "column",
@@ -304,7 +306,7 @@
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
-        "padding-block-start": 50,
+        "padding-block-start": 0,
         "padding-block-end": 30
       }
     }
