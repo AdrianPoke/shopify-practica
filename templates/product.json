@@ -316,7 +316,7 @@
                     "text_D3iVe7": {
                       "type": "text",
                       "settings": {
-                        "text": "",
+                        "text": "<p>{{ closest.product.metafields.custom.altura | metafield_tag }}{{ closest.product.metafields.custom.altura_tacon | metafield_tag }}</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
