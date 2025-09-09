@@ -1,0 +1,21 @@
+{% comment %}
+  Este snippet imprime los metacampos de Zapatos si existen
+{% endcomment %}
+
+{% assign campos = product.metafields.custom %}
+
+{% if campos %}
+  <ul>
+    {% if campos.empeine %}<li>Empeine: {{ campos.empeine }}</li>{% endif %}
+    {% if campos.forro_plantilla %}<li>Forro y plantilla: {{ campos.forro_plantilla }}</li>{% endif %}
+    {% if campos.suela %}<li>Suela: {{ campos.suela }}</li>{% endif %}
+    {% if campos.altura_plataforma %}<li>Altura plataforma: {{ campos.altura_plataforma }}</li>{% endif %}
+    {% if campos.altura_tacon %}<li>Altura tacón: {{ campos.altura_tacon }}</li>{% endif %}
+    {% if campos.ancho_cana %}<li>Ancho de caña: {{ campos.ancho_cana }}</li>{% endif %}
+    {% if campos.largo_cana %}<li>Largo de caña: {{ campos.largo_cana }}</li>{% endif %}
+    {% if campos.puntera %}<li>Puntera: {{ campos.puntera }}</li>{% endif %}
+    {% if campos.color %}<li>Color: {{ campos.color }}</li>{% endif %}
+  </ul>
+{% else %}
+  <p>No hay metacampos disponibles para este producto.</p>
+{% endif %}

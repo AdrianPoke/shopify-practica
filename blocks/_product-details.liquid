@@ -24,6 +24,10 @@
         {{- product.title }}
       </a>
     </div>
+    <div class="zapatos-metacampos">
+  {% render 'zapatos-metafields' %}
+</div>
+
     {% content_for 'blocks' %}
   {% endcapture %}
 
