@@ -1,21 +1,42 @@
 {% comment %}
-  Este snippet imprime los metacampos de Zapatos si existen
+  Snippet para imprimir los metacampos de productos,
+  con lógica según la colección a la que pertenece.
 {% endcomment %}
 
 {% assign campos = product.metafields.custom %}
 
 {% if campos %}
-  <ul>
-    {% if campos.empeine %}<li>Empeine: {{ campos.empeine }}</li>{% endif %}
-    {% if campos.forro_plantilla %}<li>Forro y plantilla: {{ campos.forro_plantilla }}</li>{% endif %}
-    {% if campos.suela %}<li>Suela: {{ campos.suela }}</li>{% endif %}
-    {% if campos.altura_plataforma %}<li>Altura plataforma: {{ campos.altura_plataforma }}</li>{% endif %}
-    {% if campos.altura_tacon %}<li>Altura tacón: {{ campos.altura_tacon }}</li>{% endif %}
-    {% if campos.ancho_cana %}<li>Ancho de caña: {{ campos.ancho_cana }}</li>{% endif %}
-    {% if campos.largo_cana %}<li>Largo de caña: {{ campos.largo_cana }}</li>{% endif %}
-    {% if campos.puntera %}<li>Puntera: {{ campos.puntera }}</li>{% endif %}
-    {% if campos.color %}<li>Color: {{ campos.color }}</li>{% endif %}
-  </ul>
+  {% assign primary_collection = product.collections.first.title | downcase %}
+
+  {% case primary_collection %}
+  
+    {% when 'zapatos' %}
+      <ul>
+        {% if campos.empeine != blank %}<li>Empeine: {{ campos.empeine }}</li>{% endif %}
+        {% if campos.forro_y_plantilla != blank %}<li>Forro y plantilla: {{ campos.forro_y_plantilla }}</li>{% endif %}
+        {% if campos.suela != blank %}<li>Suela: {{ campos.suela }}</li>{% endif %}
+        {% if campos.altura_plataforma != blank %}<li>Altura plataforma: {{ campos.altura_plataforma.value }}{{ campos.altura_plataforma.unit }}</li>{% endif %}
+        {% if campos.altura_tacon != blank %}<li>Altura tacón: {{ campos.altura_tacon.value }}{{ campos.altura_tacon.unit }}</li>{% endif %}
+        {% if campos.ancho_cana != blank %}<li>Ancho de caña: {{ campos.ancho_cana }}</li>{% endif %}
+        {% if campos.largo_cana != blank %}<li>Largo de caña: {{ campos.largo_cana }}</li>{% endif %}
+        {% if campos.puntera != blank %}<li>Puntera: {{ campos.puntera }}</li>{% endif %}
+      </ul>
+
+    {% when 'bolsos' %}
+      <ul>
+        {% if campos.empeine != blank %}<li>Empeine: {{ campos.empeine }}</li>{% endif %}
+        {% if campos.forro_y_plantilla != blank %}<li>Forro y plantilla: {{ campos.forro_y_plantilla }}</li>{% endif %}
+        {% if campos.altura != blank %}<li>Altura: {{ campos.altura.value }}{{ campos.altura.unit }}</li>{% endif %}
+        {% if campos.anchura != blank %}<li>Anchura: {{ campos.anchura.value }}{{ campos.anchura.unit }}</li>{% endif %}
+        {% if campos.bolsa_de_seguridad != nil %}
+          <li>Bolsa de seguridad: {% if campos.bolsa_de_seguridad %}Sí{% else %}No{% endif %}</li>
+        {% endif %}
+        {% if campos.profundidad != blank %}<li>Profundidad: {{ campos.profundidad.value }}{{ campos.profundidad.unit }}</li>{% endif %}
+        {% if campos.tipo_de_cierre != blank %}<li>Tipo de cierre: {{ campos.tipo_de_cierre }}</li>{% endif %}
+      </ul>
+
+  {% endcase %}
+
 {% else %}
-  <p>No hay metacampos disponibles para este producto.</p>
+  <p>Sin información.</p>
 {% endif %}

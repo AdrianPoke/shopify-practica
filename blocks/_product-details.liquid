@@ -1,13 +1,10 @@
-
-
 {%- assign block_settings = block.settings -%}
 
 <div
   id="ProductInformation-{{ section.id }}"
-  class="
-    product-details
+  class="product-details
     {% if block_settings.sticky_details_desktop %} sticky-content--desktop{% endif %}
-    {% if block_settings.height == 'fill' -%} full-height--desktop{% endif -%}
+    {% if block_settings.height == 'fill' %} full-height--desktop{% endif %}
   "
   style="--details-position: {{ block_settings.details_position }};"
   data-testid="product-information-details"
@@ -16,18 +13,6 @@
   {% endif %}
 >
   {% capture children %}
-    <div class="view-product-title">
-      <a
-        href="{{ product.selected_or_first_available_variant.url }}"
-        class="link"
-      >
-        {{- product.title }}
-      </a>
-    </div>
-    <div class="zapatos-metacampos">
-  {% render 'zapatos-metafields' %}
-</div>
-
     {% content_for 'blocks' %}
   {% endcapture %}
 
