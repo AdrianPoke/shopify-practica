@@ -447,7 +447,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h3><em>#myunisasy</em></h3>",
+            "text": "<h3><em>#myunisas</em></h3>",
             "width": "100%",
             "max_width": "none",
             "alignment": "left",
@@ -473,7 +473,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<h6>Sigue nuestro hashtag #<em>myunisas</em>y encuentra inspiración para combinar tus Unisas. Además podrás compartir tus looks con nosotros</h6>",
+            "text": "<h6>Sigue nuestro hashtag #<em>myunisas </em>encuentra inspiración para combinar tus Unisas. Además podrás compartir tus looks con nosotros</h6>",
             "width": "100%",
             "max_width": "none",
             "alignment": "left",
