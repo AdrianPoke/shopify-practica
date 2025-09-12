@@ -4264,14 +4264,14 @@ text-component {
 /* MI CSS AGREGADO */
 .product-card__content {
   background-color: #f6f6f6;
+  margin-bottom: 10px;
 }
 
 .product-card__content p {
-  padding-left: 14px; 
+  padding-left: 10px; 
 }
 
 .price,
 .product-card__price {
   padding-left: 14px;
-  padding-bottom: 8px;
 }
