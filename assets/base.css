@@ -4259,3 +4259,10 @@ text-component {
     font-size: max(1rem, 100%);
   }
 }
+
+
+/* MI CSS AGREGADO */
+.product-card__content {
+  background-color: #f6f6f6;
+}
+
